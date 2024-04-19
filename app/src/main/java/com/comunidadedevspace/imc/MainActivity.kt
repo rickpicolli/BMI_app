@@ -18,18 +18,26 @@ class MainActivity : AppCompatActivity() {
         val btnGenerateBmi = findViewById<Button>(R.id.btn_generate_bmi)
 
         btnGenerateBmi.setOnClickListener {
-            val weightInput: Float = userWeight.text.toString().toFloat()
-            val heightInput: Float = userHeight.text.toString().toFloat()
-            val heightx2 = heightInput * heightInput
-            val result = weightInput / heightx2
 
-            println("testing " + result)
+            val weightInput: String = userWeight.text.toString()
+            val heightInput: String = userHeight.text.toString()
+
+            //added the two of them in different forms for educational purpose, understanding that ideally should be the same way
+            if (weightInput == "" || heightInput.isEmpty()) {
+                //message the user that the information is missing using Snackbar from android documentation
 
 
+            } else {
+
+                val weightFloat = weightInput.toFloat()
+                val heightFloat = heightInput.toFloat()
+                val heightx2 = heightFloat * heightFloat
+                val result = weightFloat / heightx2
+
+                println("testing " + result)
+
+            }
 
         }
-
-
-
     }
 }
