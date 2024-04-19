@@ -18,9 +18,15 @@ class MainActivity : AppCompatActivity() {
         val btnGenerateBmi = findViewById<Button>(R.id.btn_generate_bmi)
 
         btnGenerateBmi.setOnClickListener {
-            val weightInput = userWeight.text
-            val heightInput = userHeight.text
-            println("test btn" + weightInput + " " + heightInput)
+            val weightInput: Float = userWeight.text.toString().toFloat()
+            val heightInput: Float = userHeight.text.toString().toFloat()
+            val heightx2 = heightInput * heightInput
+            val result = weightInput / heightx2
+
+            println("testing " + result)
+
+
+
         }
 
 
