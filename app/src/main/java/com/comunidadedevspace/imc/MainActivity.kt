@@ -3,6 +3,7 @@ package com.comunidadedevspace.imc
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 
 class MainActivity : AppCompatActivity() {
@@ -25,7 +26,12 @@ class MainActivity : AppCompatActivity() {
             //added the two of them in different forms for educational purpose, understanding that ideally should be the same way
             if (weightInput == "" || heightInput.isEmpty()) {
                 //message the user that the information is missing using Snackbar from android documentation
-
+                Snackbar
+                    .make(
+                        userWeight,
+                        "Please provide all information needed",
+                        Snackbar.LENGTH_LONG
+                    ).show()
 
             } else {
 
